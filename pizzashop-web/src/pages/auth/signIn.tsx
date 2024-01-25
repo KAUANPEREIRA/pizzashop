@@ -3,15 +3,17 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { z } from "zod";
 
-//validação dos campos do formulario com zod
+//validação dos campos do formulario com zod + tipagem
 const signInForm = z.object({
   email: z.string().email(),
 });
 
 type SignInForm = z.infer<typeof signInForm>;
+
 export const SignIn = () => {
   const {
     register,
@@ -29,6 +31,9 @@ export const SignIn = () => {
     <>
       <Helmet titleTemplate="Login" />
       <div className="p-8">
+        <Button asChild className="absolute right-8 top-8" variant="ghost">
+          <Link to={"/signup"}>Novo estabelecimento</Link>
+        </Button>
         <div className="w-[320px] flex flex-col justify-center gap 6">
           <div className="flex flex-col gap-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">
