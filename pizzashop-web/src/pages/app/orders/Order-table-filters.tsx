@@ -2,11 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Select,
+  SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { SelectContent } from "@radix-ui/react-select";
+
 import { Search } from "lucide-react";
 
 export const OrderTableFilters = () => {

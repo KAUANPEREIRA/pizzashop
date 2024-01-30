@@ -1,3 +1,4 @@
+import { Pagination } from "@/components/Pagination";
 import { OrderTableFilters } from "./Order-table-filters";
 import { OrderTableRow } from "./Order-table-row";
 
@@ -10,6 +11,7 @@ export const Orders = () => {
         <div className="border rounded-md">
           <OrderTableRow />
         </div>
+        <Pagination totalCount={105} perPage={10} pageIndex={0} />
       </div>
     </div>
   );
