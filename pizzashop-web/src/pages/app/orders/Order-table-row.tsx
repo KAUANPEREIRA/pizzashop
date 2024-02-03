@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import {
   Table,
   TableBody,
@@ -7,7 +8,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+
 import { Check, Search, X } from "lucide-react";
+import { OrderDetails } from "./Order-details";
 
 export const OrderTableRow = () => {
   return (
@@ -27,10 +30,15 @@ export const OrderTableRow = () => {
       <TableBody>
         <TableRow>
           <TableCell>
-            <Button variant="outline" size="sm">
-              <Search className="h-3 w-3" />
-              <span className="sr-only">Detalhes do pedido</span>
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline" size="sm">
+                  <Search className="h-3 w-3" />
+                  <span className="sr-only">Detalhes do pedido</span>
+                </Button>
+              </DialogTrigger>
+              <OrderDetails />
+            </Dialog>
           </TableCell>
           <TableCell className="font-mono text-sx font-medium">
             {" "}
